@@ -35,7 +35,7 @@ const MealDetailsScreen = props => {
     }, [toggleFavoriteHandler]);
 
     useEffect(() => {
-        props.navigation.setParams({isFav: isFavorite});
+        props.navigation.setParams({ isFav: isFavorite });
     }, [isFavorite]);
 
     return (
@@ -68,7 +68,11 @@ MealDetailsScreen.navigationOptions = navigationData => {
         headerTitle: mealTitle,
         headerRight: () => (
             <HeaderButtons HeaderButtonComponent={HeaderButton}>
-                <Item title="Favorite" iconName={isFavorite ? "ios-star" : "ios-star-outline"} onPress={toggleFavorite} />
+                <Item
+                    title="Favorite"
+                    iconName={isFavorite ? "ios-star" : "ios-star-outline"}
+                    onPress={toggleFavorite}
+                />
             </HeaderButtons>
         )
     };
