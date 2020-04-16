@@ -4,7 +4,6 @@ import { View, FlatList, StyleSheet } from 'react-native';
 import MealItem from '../components/MealItem';
 
 const MealList = props => {
-
     const renderMealItem = itemData => {
         return (
             <MealItem

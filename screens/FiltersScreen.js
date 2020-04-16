@@ -1,18 +1,20 @@
 import React from 'react';
-import MealList from '../components/MealList';
+import { View, Text, StyleSheet } from 'react-native';
 import { HeaderButtons, Item } from 'react-navigation-header-buttons';
 
-import { MEALS } from '../data/dummy-data';
 import HeaderButton from '../components/HeaderButton';
 
-const FavoritesScreen = props => {
-    const favMeals = MEALS.filter(meal => meal.id === 'm1' || meal.id === 'm2');
-    return <MealList listData={favMeals} navigation={props.navigation} />;
+const FiltersScreen = props => {
+    return (
+        <View style={styles.screen}>
+            <Text>The Filters Screen!</Text>
+        </View>
+    );
 };
 
-FavoritesScreen.navigationOptions = navData => {
+FiltersScreen.navigationOptions = navData => {
     return {
-        headerTitle: 'Your Favorites',
+        headerTitle: 'Filter Meals',
         headerLeft: () => (
             <HeaderButtons HeaderButtonComponent={HeaderButton}>
                 <Item
@@ -27,4 +29,12 @@ FavoritesScreen.navigationOptions = navData => {
     };
 };
 
-export default FavoritesScreen;
+const styles = StyleSheet.create({
+    screen: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center'
+    }
+});
+
+export default FiltersScreen;
